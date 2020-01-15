@@ -11,12 +11,17 @@ class App extends React.Component {
       searchfield: '',
     };
   }
+
+  handleChange = event => {
+    console.log(event.target.value);
+  };
+
   render() {
     return (
       <div className="tc">
         <h1>RoboFriends</h1>
-        <SearchBox />
-        <CardList robots={robots} />
+        <SearchBox handleChange={this.handleChange} />
+        <CardList robots={this.state.robots} />
       </div>
     );
   }
